@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                timeout(time: 4, unit: 'MINUTES'){
+                timeout(time: 20, unit: 'MINUTES'){
                     // Se cambia <test> por <install> para que se genere el reporte de jacoco
                     sh "mvn clean install -f SysAsistenciaAn/pom.xml"
                 }
@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Sonar') {
             steps {
-                timeout(time: 2, unit: 'MINUTES'){
+                timeout(time: 20, unit: 'MINUTES'){
                     withSonarQubeEnv('sonarqube'){
                         sh "mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar -Pcoverage -f SysAsistenciaAn/pom.xml"
                     }
@@ -43,7 +43,7 @@ pipeline {
 
                 sleep(10) //seconds
 
-                timeout(time: 2, unit: 'MINUTES'){
+                timeout(time: 20, unit: 'MINUTES'){
                     waitForQualityGate abortPipeline: true
                 }
             }

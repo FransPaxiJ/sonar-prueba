@@ -10,7 +10,7 @@ pipeline {
         stage('Clone') {
             steps {
                 timeout(time: 4, unit: 'MINUTES'){
-                    git branch: 'main', credentialsId: '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', url: 'https://github.com/dmamanipar/SysEventos2023.git'
+                    git branch: 'main', credentialsId: 'github_pat_11AXZA7LY0IjPsqCYMhmqv_pnJTCw2xXxfYebV5ZAuieai8Ww6UMpbEbZqojlw3dWe77S5KE4CPDXOjEV', url: 'https://github.com/FransPaxiJ/sonar-prueba.git'
                 }
             }
         }

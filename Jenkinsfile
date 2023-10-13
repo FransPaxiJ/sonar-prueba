@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                timeout(time: 2, unit: 'MINUTES'){
+                timeout(time: 4, unit: 'MINUTES'){
                     git branch: 'main', credentialsId: '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', url: 'https://github.com/dmamanipar/SysEventos2023.git'
                 }
             }

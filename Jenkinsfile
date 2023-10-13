@@ -10,7 +10,7 @@ pipeline {
         stage('Clone') {
             steps {
                 timeout(time: 4, unit: 'MINUTES'){
-                    git branch: 'main', credentialsId: 'github_pat_11AXZA7LY0IjPsqCYMhmqv_pnJTCw2xXxfYebV5ZAuieai8Ww6UMpbEbZqojlw3dWe77S5KE4CPDXOjEV', url: 'https://github.com/FransPaxiJ/sonar-prueba.git'
+                    git branch: 'master', credentialsId: 'github_pat_11AXZA7LY0IjPsqCYMhmqv_pnJTCw2xXxfYebV5ZAuieai8Ww6UMpbEbZqojlw3dWe77S5KE4CPDXOjEV', url: 'https://github.com/FransPaxiJ/sonar-prueba.git'
                 }
             }
         }
